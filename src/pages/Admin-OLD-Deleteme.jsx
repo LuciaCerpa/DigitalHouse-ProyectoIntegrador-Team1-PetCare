@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import warningIcon from "../images/warning.png";
+import warningIcon from "/images/warning.png";
 import "../styles/admin/admin.css";
 import AddProductForm from "../components/forms/AddProductForm";
 

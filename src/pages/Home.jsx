@@ -53,7 +53,7 @@ import { ServicesFilter } from "../components/ServicesFilter";
  */
 
 const categorias = [
-	{ id: 1, nombre: "Cuidado en casa", image: "/categoria1.png" },
+	{ id: 1, nombre: "Cuidado en casa", image: " /categoria1.png" },
 	{ id: 2, nombre: "Cuidado en instalaciones", image: "/categoria2.png" },
 	{ id: 3, nombre: "Asesoria personalizada", image: "/categoria3.png" },
 

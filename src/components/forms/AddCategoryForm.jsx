@@ -2,14 +2,42 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles/forms/formStyles.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AddCategoryForm = ({ onClose, onSubmit }) => {
 	const [formData, setFormData] = useState({
 		nombre: "",
 	});
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		onSubmit(formData);
+		if (!nombre.trim()) {
+			setError("El nombre es requerido");
+			return;
+		}
+
+		setIsSubmitting(true);
+		try {
+			const response = await fetch(`${API_URL}/api/categorias`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${localStorage.getItem("token")}`,
+				},
+				body: JSON.stringify({ nombre }),
+			});
+
+			if (!response.ok) throw new Error("Error al crear la categoría");
+
+			const newCategory = await response.json();
+			onSubmit(newCategory);
+			onClose();
+		} catch (error) {
+			setError(error.message);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (

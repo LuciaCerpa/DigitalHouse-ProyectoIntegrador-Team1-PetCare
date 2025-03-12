@@ -11,9 +11,11 @@ import AddCategoryForm from "../../components/forms/AddCategoryForm";
 import EditCategoryForm from "../../components/forms/EditCategoryForm";
 
 // Images
-import warningIcon from "../../images/warning.png";
-import addPlusIcon from "../../images/add-plus.png";
+import warningIcon from "/images/warning.png";
+import addPlusIcon from "/images/add-plus.png";
 import EditUserRoleForm from "../../components/forms/EditUserRole";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const AdminUser = ({ isInAdminLayout }) => {
     const [showAddForm, setShowAddForm] = useState(false);
@@ -41,7 +43,7 @@ const AdminUser = ({ isInAdminLayout }) => {
 
         try {
             await axios.post(
-                "http://localhost:8080/api/usuarios",
+                `${API_URL}/api/usuarios`,
                 userData,
                 headers
             );
@@ -71,7 +73,7 @@ const AdminUser = ({ isInAdminLayout }) => {
 
         try {
             await axios.patch(
-                `http://localhost:8080/api/usuarios/${userData.idUser}/${userData.role}`,
+                `${API_URL}/api/usuarios/${userData.idUser}/${userData.role}`,
                 null,
                 headers
             );

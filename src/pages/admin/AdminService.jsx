@@ -13,7 +13,10 @@ import EditProductForm from "../../components/forms/EditProductForm";
 import "../../styles/admin/adminService.css";
 
 // Images
-import addPlusIcon from "../../images/add-plus.png";
+import warningIcon from "/images/warning.png";
+import addPlusIcon from "/images/add-plus.png";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 // eslint-disable-next-line react/prop-types
 const AdminService = ({ isInAdminLayout }) => {
@@ -46,10 +49,10 @@ const AdminService = ({ isInAdminLayout }) => {
 		try {
 			setLoading(true);
 			const response = await axios.get(
-				"http://localhost:8080/api/servicios",
+				`${API_URL}/api/servicios`,
 				headers
 			);
-			setServices(response.data);
+			setServices(response.data.listaServicios);
 			setError(null);
 		} catch (err) {
 			console.error("Error fetching services:", err);
@@ -71,8 +74,8 @@ const AdminService = ({ isInAdminLayout }) => {
 		}
 
 		try {
-			await axios.post(
-				"http://localhost:8080/api/servicios",
+			const response = await axios.post(
+				`${API_URL}/api/servicios`,
 				servicioData,
 				headers
 			);
@@ -99,7 +102,7 @@ const AdminService = ({ isInAdminLayout }) => {
 
 		try {
 			await axios.put(
-				`http://localhost:8080/api/servicios/${serviceData.idServicio}/categorias/${serviceData.categoriaId}`,
+				`${API_URL}/api/servicios/${serviceData.idServicio}/categorias/${serviceData.categoriaId}`,
 				serviceData,
 				headers
 			);

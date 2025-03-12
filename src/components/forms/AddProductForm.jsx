@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { crearServicio } from "../../services/serviciosService";
-import petCareLogo from "../../images/pet-care-logo-v2.png";
+import petCareLogo from "/images/pet-care-logo-v2.png";
 import { obtenerCategorias } from "../../services/categoriasService";
 import {
 	FormWrapper,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "../../styles/searchBox.css";
-import searchIcon from "../../images/search.png";
+import searchIcon from "/images/search.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { SearchInputsContainer } from './styled-components/SearchComponent.styles';

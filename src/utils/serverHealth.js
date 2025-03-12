@@ -1,6 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
 export const checkServerHealth = async () => {
     try {
-        const response = await fetch('http://localhost:8080/actuator/health', {
+        const response = await fetch(`${API_URL}/actuator/health`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json'

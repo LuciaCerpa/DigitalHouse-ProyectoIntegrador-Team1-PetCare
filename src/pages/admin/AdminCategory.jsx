@@ -11,8 +11,8 @@ import AddCategoryForm from "../../components/forms/AddCategoryForm";
 import EditCategoryForm from "../../components/forms/EditCategoryForm";
 
 // Images
-import warningIcon from "../../images/warning.png";
-import addPlusIcon from "../../images/add-plus.png";
+import warningIcon from "/images/warning.png";
+import addPlusIcon from "/images/add-plus.png";
 
 const AdminCategory = ({ isInAdminLayout }) => {
 	const [showAddForm, setShowAddForm] = useState(false);

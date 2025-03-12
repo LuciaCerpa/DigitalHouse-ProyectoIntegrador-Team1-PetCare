@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import "axios";
-import PetCareLogo from "../../images/pet-care-logo-v2.png";
+import PetCareLogo from "/images/pet-care-logo-v2.png";
 import "../../styles/admin/registro.css";
 
 /*
@@ -73,8 +73,8 @@ const AddServiceForm = () => {
 			// Manejo de error para nombres duplicados (CA6)
 			if (
 				err.response &&
-				err.response.data &&
-				err.response.data.error === "Nombre ya en uso"
+				err.response?.data &&
+				err.response?.data?.error === "Nombre ya en uso"
 			) {
 				setError("El nombre del servicio ya está en uso.");
 			} else {

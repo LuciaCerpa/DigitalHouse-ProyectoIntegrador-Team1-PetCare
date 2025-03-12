@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ServiceDetailImagesGrid from "../components/services/ServiceDetailImagesGrid";
 import { ServiceDetailInfo } from "../components/services/ServiceDetailInfo";
-import arrowLeft from "../images/arrow-left.png";
+import arrowLeft from "/images/arrow-left.png";
 
 const ServiceDetail = () => {
   const { id } = useParams();

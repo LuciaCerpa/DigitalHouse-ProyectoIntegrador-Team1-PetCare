@@ -1,5 +1,5 @@
 import React from 'react'
-import Star from "../../assets/icons/Star.svg"
+import Star from "/icons/Star.svg"
 
 export const StarsComponent = ({rating}) => {
   return (

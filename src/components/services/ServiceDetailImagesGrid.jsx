@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../../styles/services/serviceDetailImagesGrid.css";
-import arrowLeft from "../../images/arrow-left.png";
+import arrowLeft from "/images/arrow-left.png";
 
 const ServiceDetailImagesGrid = ({ images, onGoBack }) => {
 	const navigate = useNavigate();

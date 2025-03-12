@@ -1,6 +1,6 @@
 import React from 'react'
 import { TitleContainer, Icon, Title } from './styled-components/TitleComponents.styles'
-import pawprint from '../../assets/icons/pawprint.svg'
+import pawprint from '/icons/pawprint.svg'
 
 export const TitleComponent = ({title}) => {
   return (

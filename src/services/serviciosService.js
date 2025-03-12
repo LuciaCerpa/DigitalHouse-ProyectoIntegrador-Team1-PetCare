@@ -1,12 +1,12 @@
 import axiosInstance from "./config/axiosConfig";
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api/servicios`;
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getServices = async () => {
 	try {
-	  const response = await axiosInstance.get(API_URL);
+	  const response = await axiosInstance.get(`${API_URL}/api/servicios`);
 	  console.log("RESPONSE:",response)
-	  return response.data.listaServicios;
+	  return response.data?.listaServicios;
 	} catch (error) {
 	  if (error.response) {
 		throw new Error(error.response.data.message || "Error del servidor");
@@ -54,7 +54,7 @@ export const crearServicio = async (servicioData) => {
 		console.log(formData);
 
 		const response = await axiosInstance.post(
-			`${API_URL}/servicio`,
+			`${API_URL}/api/servicios/servicio`,
 			formData,
 			{
 				headers: {

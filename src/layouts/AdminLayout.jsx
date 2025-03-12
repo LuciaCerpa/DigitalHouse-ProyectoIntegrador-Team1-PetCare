@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../auth/AuthContext';
 import '../styles/admin/adminLayout.css';
-import warningImg from '../images/warning.png';
+import warningImg from '/images/warning.png';
 
 const AdminLayout = ({ children, onMenuClick }) => {
     // Log inmediato al renderizar el componente

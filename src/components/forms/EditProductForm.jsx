@@ -16,7 +16,7 @@ import {
 	Label,
 	Select,
 } from "../../styles/AddProductForm.styles";
-import petCareLogo from "../../images/pet-care-logo-v2.png";
+import petCareLogo from "/images/pet-care-logo-v2.png";
 import AddCategoryForm from "./AddCategoryForm";
 
 const EditProductForm = ({ service, onClose, onSubmit }) => {

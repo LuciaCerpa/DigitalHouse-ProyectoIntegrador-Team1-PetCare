@@ -7,9 +7,11 @@ export default defineConfig({
     'process.env': process.env
   },
   server: {
+    port: 5173,
+    strictPort: true,
     proxy: {
       "/api": {
-        target: "http://localhost:8080", // URL del backend
+        target: "http://localhost:8080",
         changeOrigin: true,
         secure: false,
       },

@@ -6,6 +6,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LiaPawSolid } from "react-icons/lia";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AdminUserList = ({ onEdit }) => {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState(null);
@@ -21,7 +23,7 @@ const AdminUserList = ({ onEdit }) => {
         }
 
         try {
-            const response = await axios.get("http://localhost:8080/api/usuarios", {
+            const response = await axios.get(`${API_URL}/api/usuarios`, {
                 headers: {
                     Authorization: `Bearer ${auth.token}`,
                 },
@@ -93,7 +95,6 @@ const AdminUserList = ({ onEdit }) => {
                     <tbody>
                         {users.map((category) => (
                             <tr key={category.idCategoria} className="table-row">
-                                {" "}
                                 {/* Changed from .id to .idCategoria */}
                                 <td className="table-cell">{category.nombre}</td>
                                 <td className="table-cell">

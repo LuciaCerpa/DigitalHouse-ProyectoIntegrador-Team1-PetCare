@@ -3,7 +3,7 @@ import { AuthContext } from "../../auth/AuthContext";
 import { Link } from "react-router-dom";
 import AdminLayout from "../../layouts/AdminLayout";
 import AdminService from "./AdminService";
-import warningImg from "../../images/warning.png";
+import warningImg from "/images/warning.png";
 import AdminCategory from "./AdminCategory";
 
 import "../../styles/admin/adminHome.css";

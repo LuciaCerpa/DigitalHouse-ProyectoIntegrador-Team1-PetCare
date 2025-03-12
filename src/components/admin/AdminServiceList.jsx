@@ -12,11 +12,13 @@ import { AuthContext } from "../../auth/AuthContext";
 import "../../styles/admin/adminServiceList.css";
 
 // Images
-import pencilIcon from "../../images/pencil.png";
-import trashIcon from "../../images/trash-can.png";
+import pencilIcon from "/images/pencil.png";
+import trashIcon from "/images/trash-can.png";
 
 // Import the LiaPawSolid icon component
 import { LiaPawSolid } from "react-icons/lia";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const AdminServiceList = ({ onEdit }) => {
 	const { auth } = useContext(AuthContext);
@@ -43,7 +45,7 @@ const AdminServiceList = ({ onEdit }) => {
 
 		try {
 			const response = await axios.get(
-				"http://localhost:8080/api/servicios",
+				`${API_URL}/api/servicios`,
 				{
 					headers: {
 						Authorization: `Bearer ${auth.token}`,
@@ -53,9 +55,9 @@ const AdminServiceList = ({ onEdit }) => {
 			);
 
 			console.log("Servicios desde la base de datos:");
-			console.log(response.data);
-			console.log(response.data.listaServicios);
-			setServices(response.data.listaServicios);
+			console.log(response?.data);
+			console.log(response?.data?.listaServicios);
+			setServices(response?.data?.listaServicios);
 			setError(null);
 		} catch (err) {
 			const errorMessage =
@@ -83,7 +85,7 @@ const AdminServiceList = ({ onEdit }) => {
 		setDeleteLoading(true);
 		try {
 			const response = await axios.delete(
-				`http://localhost:8080/api/servicios/${serviceToDelete.idServicio}`,
+				`${API_URL}/api/servicios/${serviceToDelete.idServicio}`,
 				{
 					headers: {
 						Authorization: `Bearer ${auth.token}`,

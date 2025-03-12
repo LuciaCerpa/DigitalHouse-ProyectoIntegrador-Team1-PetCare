@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/services/serviceGallery.css";
-import arrowLeft from "../images/arrow-left.png";
+import arrowLeft from "/images/arrow-left.png";
 
 const ServiceGallery = () => {
 	const location = useLocation();

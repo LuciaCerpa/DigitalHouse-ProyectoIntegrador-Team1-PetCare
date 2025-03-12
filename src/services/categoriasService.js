@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const obtenerCategorias = async () => {
     try {
         const token = localStorage.getItem('token');
@@ -10,7 +12,7 @@ export const obtenerCategorias = async () => {
 
         // Simple direct request without extra configuration
         const response = await axios.get(
-            "http://localhost:8080/api/categorias",
+            `${API_URL}/api/categorias`,
             {
                 headers: {
                 Authorization: `Bearer ${token}`, 

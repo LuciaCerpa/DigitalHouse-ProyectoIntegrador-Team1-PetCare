@@ -35,7 +35,7 @@ function App() {
 
 					{/* Rutas del usuario (sitio web) */}
 					<Route path="/" element={<Home />} />
-					<Route path="/categories/:id" element={<Categories/>}/>
+					<Route path="/categories/:id" element={<Categories />} />
 					<Route path="/service/:id" element={<ServiceDetail />} />
 					<Route path="/gallery" element={<ServiceGallery />} />
 

@@ -7,6 +7,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Login = ({ isLoginValue }) => {
   const [isLogin, setIsLogin] = useState(isLoginValue);
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,8 +25,8 @@ const Login = ({ isLoginValue }) => {
   const onSubmit = async (data) => {
     try {
       const url = isLogin
-        ? "http://localhost:8080/api/auth/login"
-        : "http://localhost:8080/api/auth/register";
+        ? `${API_URL}/api/auth/login`
+        : `${API_URL}/api/auth/register`;
       const response = await axios.post(url, data);
 
       // Guardar el token en el localStorage

@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const instance = axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: `${API_URL}`,
     headers: {
         "Content-Type": "application/json",
     },
@@ -33,7 +35,6 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
     (response) => {
-        console.log("Response:", response.status, response.data);
         return response;
     },
     (error) => {
@@ -41,7 +42,7 @@ instance.interceptors.response.use(
         if (error.response?.status === 401 || error.response?.status === 403) {
             console.error('Authentication error:', error.response.status);
             localStorage.removeItem('token'); // Clear invalid token
-            window.location.href = '/'; // Redirect to home/login
+            //window.location.href = '/'; // Redirect to home/login
         }
 
         console.error("Error:", {

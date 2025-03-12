@@ -9,7 +9,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import "../styles/Footer.css";
-import petCareLogo from "../images/pet-care-logo-v2.png";
+import petCareLogo from "/images/pet-care-logo-v2.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

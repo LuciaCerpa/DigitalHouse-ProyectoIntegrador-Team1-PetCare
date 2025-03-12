@@ -7,7 +7,7 @@
  * - Responsive design (hides on mobile)
  */
 import "../styles/searchBox.css";
-import searchIcon from "../images/search.png";
+import searchIcon from "/images/search.png";
 
 const SearchBox = () => {
 	return (
